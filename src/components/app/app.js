@@ -18,7 +18,8 @@ class App extends Component {
                 {name: 'Ivan P.', salary: 21000, increase: false, like: false, id: 2},
                 {name: 'Alex F.', salary: 2000, increase: false, like: false, id: 3},
             ],
-            term: ''
+            term: '',
+            some: 'some string'
         }
         this.maxId = 4;
     }
