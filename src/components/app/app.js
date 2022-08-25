@@ -18,8 +18,7 @@ class App extends Component {
                 {name: 'Ivan P.', salary: 21000, increase: false, like: false, id: 2},
                 {name: 'Alex F.', salary: 2000, increase: false, like: false, id: 3},
             ],
-            term: '',
-            some: 'some string'
+            term: ''
         }
         this.maxId = 4;
     }
@@ -67,6 +66,10 @@ class App extends Component {
         })
     }
 
+    onUpdateSearch = (term) => {
+        this.setState({term});
+    }
+
     render() {
         const {data, term} = this.state;
         const employees = data.length;
@@ -76,7 +79,7 @@ class App extends Component {
             <div className="app">
                 <AppInfo employees={employees} incresed={incresed}/>
                 <div className="search-panel">
-                    <SearchPanel/>
+                    <SearchPanel onUpdateSearch={this.onUpdateSearch}/>
                     <AppFilter/>
                 </div>
                 <EmloyeesList 
